@@ -1,4 +1,4 @@
-# 📋 WhatsApp Disparador - Painel Administrativo (Laravel)
+# 📋 WhatsApp Disparador | Laravel
 
 Sistema de gerenciamento para campanhas de disparo via WhatsApp.
 
