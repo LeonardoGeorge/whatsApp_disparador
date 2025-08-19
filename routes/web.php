@@ -36,4 +36,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
 Route::post('/campaigns/{id}/process', [CampaignController::class, 'process'])
     ->name('campaigns.process');
 
+
+Route::get('/health', function () {
+    return response()->json([
+        'status' => 'ok',
+        'message' => 'Application is running',
+        'timestamp' => now()
+    ]);
+});
+
 require __DIR__ . '/auth.php';
