@@ -2,13 +2,10 @@
 
 namespace Database\Seeders;
 
-
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-
-
-
+use App\Models\Contact;
 
 class ContactSeeder extends Seeder
 {
@@ -19,48 +16,148 @@ class ContactSeeder extends Seeder
      */
     public function run()
     {
+        // Desativa a verificação de chaves estrangeiras
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+
+        // Limpa a tabela de forma segura
+        Contact::truncate();
+
+        // Reativa a verificação
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+
         $contacts = [
             [
                 'name' => 'Leonardo George',
-                'phone' => '5519990031768',
+                'phone' => '5491133343771',
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'name' => 'Laura',
-                'phone' => '5519992910374',
+                'name' => 'Ricardo Almeida',
+                'phone' => '5581987623456', // Celular Recife (PE)
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'name' => 'Samuel',
-                'phone' => '5519995180998',
+                'name' => 'Fernanda Castro',
+                'phone' => '558692345678', // Fixo Teresina (PI)
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'name' => 'Rafaell',
-                'phone' => '5519993946795',
+                'name' => 'Marcos Vinícius',
+                'phone' => '5586998765432', // Celular Teresina (PI)
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'name' => 'Marcelle',
-                'phone' => '5491126507784',
+                'name' => 'Juliana Porto',
+                'phone' => '558321654321', // Fixo João Pessoa (PB)
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'name' => 'Elielton Almeida',
-                'phone' => '55199999269043',
+                'name' => 'Rodrigo Santana',
+                'phone' => '5587991234567', // Celular Petrolina (PE)
                 'created_at' => now(),
                 'updated_at' => now()
             ],
-            
-            
-            // Adicione mais contatos...
+            [
+                'name' => 'Amanda Nunes',
+                'phone' => '558622334455', // Fixo Maceió (AL)
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'Lucas Peixoto',
+                'phone' => '5584987654321', // Celular Natal (RN)
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'Carolina Dias',
+                'phone' => '558533112233', // Fixo Fortaleza (CE)
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'Gustavo Henrique',
+                'phone' => '5587987654321', // Celular Juazeiro do Norte (CE)
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'Patrícia Lemos',
+                'phone' => '558732445566', // Fixo Aracaju (SE)
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'Rafael Monteiro',
+                'phone' => '5582998765432', // Celular Maceió (AL)
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'Tatiane Vasconcelos',
+                'phone' => '558321987654', // Fixo João Pessoa (PB)
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'Diego Ramos',
+                'phone' => '5586991234567', // Celular Teresina (PI)
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'Vanessa Lima',
+                'phone' => '558733556677', // Fixo Maceió (AL)
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'Roberto Júnior',
+                'phone' => '5581981234567', // Celular Recife (PE)
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'Mariana Costa',
+                'phone' => '558422667788', // Fixo Natal (RN)
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'Felipe Andrade',
+                'phone' => '5587981234567', // Celular Juazeiro do Norte (CE)
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'Larissa Martins',
+                'phone' => '558832998877', // Fixo Aracaju (SE)
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'Eduardo Sampaio',
+                'phone' => '5588998765432', // Celular Juazeiro do Norte (CE)
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'Camila Rocha',
+                'phone' => '558521334455', // Fixo Recife (PE)
+                'created_at' => now(),
+                'updated_at' => now()
+            ]
+
+
+            // Adicione mais contatos conforme necessário...
         ];
 
-        \App\Models\Contact::insert($contacts);
+        // Insere os contatos
+        Contact::insert($contacts);
     }
 }

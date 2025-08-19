@@ -11,7 +11,7 @@ class AddElieltonContactSeeder extends Seeder
     {
         DB::table('contacts')->insert([
             'name' => 'Elielton Almeida',
-            'phone' => '55199999269043',
+            'phone' => '5519999269043',
             'created_at' => now(),
             'updated_at' => now()
         ]);
