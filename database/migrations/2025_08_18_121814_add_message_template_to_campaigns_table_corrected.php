@@ -14,7 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::table('campaigns', function (Blueprint $table) {
-            $table->text('message_template')->nullable(); // Removido o after('description')
+            // Removido o after('description')
+            $table->text('message_template')->nullable(); 
         });
     }
 

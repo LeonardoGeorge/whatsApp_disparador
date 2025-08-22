@@ -19,8 +19,12 @@ return new class extends Migration
             $table->string('name');
             $table->text('message');
             // migration campaigns_table.php
-            $table->foreignId('user_id')->nullable()->constrained()->onDelete('cascade');
-            $table->timestamp('scheduled_at')->nullable();
+            $table->foreignId('user_id')
+            ->nullable()
+            ->constrained()
+            ->onDelete('cascade');
+            $table->timestamp('scheduled_at')
+            ->nullable();
             $table->timestamps();
         });
     }
