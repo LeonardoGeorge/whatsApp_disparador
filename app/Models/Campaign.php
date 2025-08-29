@@ -9,9 +9,10 @@ class Campaign extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'user_id',  // 👈 Adicione esta linha
+        'user_id',  
         'name',
         'message',
+        'image',
         'scheduled_at'
     ];
     // Relacionamento com contatos

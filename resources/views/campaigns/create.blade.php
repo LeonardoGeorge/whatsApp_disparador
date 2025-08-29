@@ -13,7 +13,7 @@
                 <h2 class="text-2xl font-bold mb-4">Disparador de Mensagens</h2>
                 
                 @auth
-                    <form id="campaignForm" action="{{ route('campaigns.store') }}" method="POST">
+                    <form id="campaignForm" action="{{ route('campaigns.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-4">
                             <label class="block text-sm font-medium mb-1">Nome da Campanha</label>
@@ -24,6 +24,13 @@
                             <label class="block text-sm font-medium mb-1">Mensagem</label>
                             <textarea name="message" rows="5" class="w-full rounded-md border-gray-300 shadow-sm" required></textarea>
                         </div>
+                        <!-- NOVO CAMPO DE UPLOAD -->
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium mb-1">Imagem da Campanha (capa)</label>
+                            <input type="file" name="image" accept="image/*" class="w-full rounded-md border-gray-300 shadow-sm">
+                        </div>
+
+                        
                         
                         <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md">
                             Criar Campanha

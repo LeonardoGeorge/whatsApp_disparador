@@ -31,6 +31,17 @@
                 @auth
                     <div class="campaign-info dark:bg-gray-700 dark:text-gray-100 mb-6">
                         <h3 class="text-xl font-semibold mb-2">{{ $campaign->name }}</h3>
+
+                        {{-- Se houver imagem, exibe aqui --}}
+                    @if($campaign->image)
+                        <div class="mb-4">
+                            <img src="{{ asset('storage/' . $campaign->image) }}" 
+                                alt="Capa da campanha" 
+                                class="w-64 rounded-md shadow-md">
+                        </div>
+                    @endif
+
+
                         <p class="whitespace-pre-wrap">{{ $campaign->message }}</p>
                         <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">
                             Criada em: {{ $campaign->created_at->format('d/m/Y H:i') }}

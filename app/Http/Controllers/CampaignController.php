@@ -31,9 +31,16 @@ class CampaignController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'message' => 'required|string',
+            'image' => 'nullable|image|mimes:png,jpg,png|max:2048',
         ]);
 
         try {
+            // Se tiver imagem, salva no storage
+            if ($request->hasFile('image')) {
+                $path = $request->file('image')->store('campaigns', 'public');
+                $validated['image'] = $path; // salva o caminho no banco
+            }
+            
             $campaign = Campaign::create($validated);
 
             // Vincula todos os contatos existentes com status pendente
